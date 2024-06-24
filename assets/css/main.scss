@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --fontColor-black: #191919;
+  --color-orange: #ff7010;
+  --bg-color: #f9f9f9;
+  --color-red: #e23535;
+  --color-border: #eaeaea;
+  --color-white: white;
+  --bgcolor-white: white;
+}
+
+body.dark {
+  --bg-color: rgb(14, 14, 14);
+  --fontColor-black: white;
+  --bgcolor-white: rgb(28, 28, 28);
+  --color-border: rgb(46, 46, 46);
+}
+main {
+  background-color: var(--bg-color);
+  font-family: "Montserrat Alternates";
+}
+
+.container {
+  max-width: 1330px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+i {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.flyingImage {
+  position: absolute !important;
+  animation: fly_to_cart 1.5s ease-in-out;
+  border-radius: 50%;
+}
+
+@keyframes fly_to_cart {
+  0%,
+  10% {
+    left: 0;
+    top: 0;
+  }
+
+  45%,
+  50% {
+    left: calc(var(--left) + 40px);
+    top: 60px;
+  }
+
+  80%,
+  90% {
+    left: calc(var(--left) + 40px);
+    top: var(--top);
+    transform: scale(0.1);
+  }
+
+  100% {
+    left: calc(var(--left) + 40px);
+    top: var(--top);
+    transform: scale(0.1);
+  }
+}
